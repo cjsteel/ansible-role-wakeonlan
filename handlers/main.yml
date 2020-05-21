@@ -1,0 +1,9 @@
+---
+# wakeonlan/handlers/main.yml
+
+- name: restart wakeonlan
+  service:
+    name: "{{ wakeonlan_service }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"

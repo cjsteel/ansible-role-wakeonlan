@@ -1,0 +1,24 @@
+---
+# wakeonlan/vars/main.yml
+
+_wakeonlan_requirements:
+  default:
+    - wakeonlan
+  #Alpine:
+  #  - wakeonlan
+  #Archlinux:
+  #  - wakeonlan
+  Debian:
+    - wakeonlan
+  CentOS:
+    - wakeonlan
+  CentOS-7:
+    - ethtool
+  #Fedora:
+  #  - wakeonlan
+  #openSUSE Leap:
+  #  - wakeonlan
+  Ubuntu:
+    - wakeonlan
+
+wakeonlan_requirements: "{{ _wakeonlan_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_wakeonlan_requirements[ansible_distribution] | default(_wakeonlan_requirements['default'])) }}"

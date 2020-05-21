@@ -1,0 +1,10 @@
+---
+# wakeonlan/tasks/main.yml
+
+- name: install wakeonlan requirements
+  package:
+    name: "{{ wakeonlan_requirements }}"
+    state: present
+  register: wakeonlan_install_requirements
+  until: wakeonlan_install_requirements is succeeded
+  retries: 3
