@@ -10,10 +10,10 @@ _wakeonlan_requirements:
   #  - wakeonlan
   Debian:
     - wakeonlan
-  CentOS:
-    - wakeonlan
-  CentOS-7:
-    - ethtool
+  #CentOS:
+  #  - wakeonlan
+  #CentOS-7:
+  #  - wakeonlan
   #Fedora:
   #  - wakeonlan
   #openSUSE Leap:
